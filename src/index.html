@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="MobileDash ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="busak">
+  <link rel="apple-touch-startup-image" href="assets/splash/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/splash/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/splash/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/splash/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/splash/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/splash/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/splash/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#6F6F6F">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#fafafa">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta charset="utf-8">
+  <base href="/">
+  <title>MobileDash </title>
+
+ <!--============== INICIO HEADER MobileDash  ============================= -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+<!-- Stylesheets -->
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+   <!--  <link href="assets/assetsmobile/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/assetsmobile/lib/fontawesome-free/css/all.min.css" rel="stylesheet"> -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <!-- <link href="assets/assetsmobile/lib/ionicons/css/ionicons.min.css" rel="stylesheet"> -->
+    <link href="assets/assetsmobile/lib/typicons.font/typicons.css" rel="stylesheet">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="assets/assetsmobile/css/azia.css">
+   
+ 
+<!--============== FIN HEADER MobileDash  ============================= -->
+
+  </head>
+  <body >  
+    <div class="boxed_wrapper green-color">
+
+      <!-- LOADER -->
+
+
+    <app-root></app-root>
+
+    <noscript>Please enable JavaScript to continue using this application.</noscript>
+
+  <!--============== INICIO JS MobileDash  ============================= -->
+ <button class="scroll-top scroll-to-target" data-target="html">
+            <span class="flaticon-up-arrow"></span>
+        </button>
+       
+ <script src="assets/assetsmobile/lib/jquery/jquery.min.js"></script>
+    <script src="assets/assetsmobile/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/assetsmobile/lib/ionicons/ionicons.js"></script>
+    <script src="assets/assetsmobile/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <script src="assets/assetsmobile/js/azia.js"></script>
+    <script>
+      $(function(){
+        'use strict'
+
+        new PerfectScrollbar('#azContactList', {
+          suppressScrollX: true
+        });
+
+        new PerfectScrollbar('.az-contact-info-body', {
+          suppressScrollX: true
+        });
+
+        $('.az-contact-item').on('click touch', function() {
+          $(this).addClass('selected');
+          $(this).siblings().removeClass('selected');
+
+          $('body').addClass('az-content-body-show');
+        })
+
+      });
+    </script>
+  <!--============== FIN JS MobileDash  ============================= -->
+  
+  </div>
+</body>
+</html>
