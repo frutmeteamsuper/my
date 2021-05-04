@@ -3,7 +3,8 @@ import {
 	TopbarComponent,
 	TestappComponent,
 	FooterComponent,
-	OrdersComponent
+	OrdersComponent,
+	CalendarComponent
 
 
 	}from "./components/index.paginas";
@@ -15,6 +16,7 @@ const app_routes: Routes = [
 	{path:'topbar',component:TopbarComponent},
 	{path:'orders',component:FooterComponent},
 	{path:'footer',component:OrdersComponent},
+	{path:'calendar',component:CalendarComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);

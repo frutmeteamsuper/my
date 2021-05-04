@@ -1,0 +1,60 @@
+<!--    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-90680653-2');
+    </script> -->
+ <div class="az-content az-content-calendar">
+      <div class="container">
+        <div class="az-content-left az-content-left-calendar">
+          <div class="az-content-header">
+            <a href="#" id="azMenuShow" class="az-header-menu-icon"><span></span></a>
+            <a href="index.html" class="az-logo">az<span>i</span>a</a>
+            <a href="#" id="azContentLeftHide" class="az-header-arrow">
+              <i class="icon ion-md-arrow-forward d-sm-none"></i>
+              <i class="icon ion-md-close d-none d-sm-block"></i>
+            </a>
+          </div><!-- az-content-header -->
+
+          <div id="dateToday" class="az-content-label az-content-label-sm tx-medium lh-1 mg-b-10"></div>
+          <h2 class="az-content-title mg-b-25 tx-24">My Calendar</h2>
+
+          <div class="fc-datepicker az-datepicker mg-b-30"></div>
+
+          <label class="az-content-label tx-13 tx-bold mg-b-10">Event List</label>
+          <nav class="nav az-nav-column az-nav-calendar-event">
+            <a href="#" class="nav-link"><i class="icon ion-ios-calendar tx-primary"></i> <div>Calendar Events</div></a>
+            <a href="#" class="nav-link"><i class="icon ion-ios-calendar tx-success"></i> <div>Birthday Events</div></a>
+            <a href="#" class="nav-link"><i class="icon ion-ios-calendar tx-danger"></i> <div>Holiday Calendar</div></a>
+            <a href="#" class="nav-link"><i class="icon ion-ios-calendar tx-warning"></i> <div>Other Calendar</div></a>
+            <a href="#" class="nav-link exclude"><i class="icon ion-ios-calendar tx-info"></i> <div>Discovered Events</div></a>
+          </nav>
+        </div>
+        <div class="az-content-body az-content-body-calendar">
+
+          <div id="calendar" class="az-calendar"></div>
+        </div><!-- az-content-body -->
+      </div><!-- container -->
+    </div>
+      <script>
+      $(function(){
+        'use strict'
+
+        new PerfectScrollbar('#azContactList', {
+          suppressScrollX: true
+        });
+
+        new PerfectScrollbar('.az-contact-info-body', {
+          suppressScrollX: true
+        });
+
+        $('.az-contact-item').on('click touch', function() {
+          $(this).addClass('selected');
+          $(this).siblings().removeClass('selected');
+
+          $('body').addClass('az-content-body-show');
+        })
+
+      });
+    </script>

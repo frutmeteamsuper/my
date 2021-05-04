@@ -73,7 +73,7 @@ quotes()
 {
   this.message="Loading, please wait...";
      this.getOrders();
-     this.first="News";
+     this.first="All";
      this.getOrdersTamano();
   }
 
@@ -94,7 +94,7 @@ quotes()
         });
       }
     this._uw.loaded=true;
-   
+   this.quotes();
   }
   back(){
     this.itemSelected=false;

@@ -47,6 +47,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { Component, Inject} from '@angular/core';
 import { FooterComponent } from './components/footer/footer.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 
 
@@ -57,6 +58,7 @@ import { OrdersComponent } from './components/orders/orders.component';
     TopbarComponent,
     FooterComponent,
     OrdersComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
