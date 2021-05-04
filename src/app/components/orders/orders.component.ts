@@ -18,7 +18,10 @@ export class OrdersComponent implements OnInit {
     private location: Location,
     private router: Router
   	) { }
-    
+      loadAPI = null;  
+
+  url = "assets/assetspenguins/js/owl.js";
+  url2 = "assets/assetspenguins/js/script.js";
     public orders:OrderInterface;
     public order:OrderInterface;
     // orders: Observable<any>;
@@ -36,6 +39,22 @@ export class OrdersComponent implements OnInit {
         }
       });
     }
+     public loadScript() {
+    let node = document.createElement("script");
+    node.src = this.url;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
+  }
+  public loadScript2() {
+    let node = document.createElement("script");
+    node.src = this.url2;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
+  }
  
  
 quotes()
@@ -52,6 +71,14 @@ quotes()
     }
   
   ngOnInit() {
+         if (this._uw.loaded==true){
+      this.loadAPI = new Promise(resolve => {
+        this.loadScript();
+        this.loadScript2();
+        // this.loadScript3();
+        });
+      }
+    this._uw.loaded=true;
    
   }
 
