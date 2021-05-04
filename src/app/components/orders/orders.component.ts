@@ -4,7 +4,7 @@ import { OrderInterface } from '../../models/order-interface';
 import { DataApiService } from '../../services/data-api.service';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -19,9 +19,14 @@ export class OrdersComponent implements OnInit {
     private router: Router
   	) { }
       loadAPI = null;  
+      first = "0 Records";  
+      message = "please, Select a order category";  
+      itemSelected:boolean= false;
 
-  url = "assets/assetspenguins/js/owl.js";
-  url2 = "assets/assetspenguins/js/script.js";
+
+  url = "assets/assetsmobile/lib/jquery/jquery.min.js";
+  url2 = "assets/assetsmobile/lib/perfect-scrollbar/perfect-scrollbar.min.js";
+  url3 = "assets/assetsmobile/js/azia.js";
     public orders:OrderInterface;
     public order:OrderInterface;
     // orders: Observable<any>;
@@ -55,11 +60,20 @@ export class OrdersComponent implements OnInit {
     node.charset = "utf-8";
     document.getElementsByTagName("head")[0].appendChild(node);
   }
- 
+  public loadScript3() {
+    let node = document.createElement("script");
+    node.src = this.url3;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
+  } 
  
 quotes()
 {
+  this.message="Loading, please wait...";
      this.getOrders();
+     this.first="News";
      this.getOrdersTamano();
   }
 
@@ -68,6 +82,7 @@ quotes()
         this.dataApi
         .getOrders()
         .subscribe((orders: OrderInterface) => (this.orders=orders));
+      
     }
   
   ngOnInit() {
@@ -75,11 +90,14 @@ quotes()
       this.loadAPI = new Promise(resolve => {
         this.loadScript();
         this.loadScript2();
-        // this.loadScript3();
+        this.loadScript3();
         });
       }
     this._uw.loaded=true;
    
+  }
+  back(){
+    this.itemSelected=false;
   }
 
 
@@ -88,6 +106,9 @@ quotes()
     this._uw.idSelected=order.id;
     this._uw.tamano=tamano;
     this._uw.indice=indice;
+    this.itemSelected=true;
+    // document.getElementsByTagName("body").addClass('az-content-body-show');
+  
 
   }
     setIdfull(order,indice,tamano){

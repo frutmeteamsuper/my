@@ -1,23 +1,22 @@
 
-
     <div class="az-content az-content-app az-content-contacts pd-b-0">
       <div class="container">
         <div class="az-content-left az-content-left-contacts">
 
           <div class="az-content-breadcrumb lh-1 mg-b-10">
-            <span>Apps &amp; Pages</span>
-            <span>Contacts</span>
+            <!-- <span>Apps &amp; Pages</span> -->
+            <!-- <span>Contacts</span> -->
           </div>
           <h2 class="az-content-title tx-24 mg-b-30">My Orders</h2>
 
           <nav class="nav az-nav-line az-nav-line-chat">
             <a href="#" data-toggle="tab" class="nav-link active">Appointments</a>
-            <a   (click)="quotes()"   data-toggle="tab" class="nav-link" >Quotes</a>
+            <a  href="#" (click)="quotes()"   data-toggle="tab" class="nav-link" >Quotes</a>
           </nav>
 
-          <div id="azContactList" class="az-contacts-list">
-            <div class="az-contact-label">News</div>
-         <!--    <div class="az-contact-item selected">
+          <div id="azContactList" class="az-contacts-list" >
+            <div class="az-contact-label">{{first}}</div>
+           <!--  <div class="az-contact-item selected">
               <div class="az-img-user online"><img src="assets/assetsmobile/img/img20.jpg" alt=""></div>
               <div class="az-contact-body">
                 <h6>Abigail Johnson</h6>
@@ -25,127 +24,86 @@
               </div>
               <a href="#" class="az-contact-star active"><i class="typcn typcn-star"></i></a>
             </div> -->
-            <div class="az-contact-item" *ngFor="let order of orders; index as i" (click)="setId(order,i,this._uw.tamano)"> 
-           <!--    <div class="az-img-user"><img src="assets/assetsmobile/img/img9.jpg" alt=""></div> -->
+            <div class="az-contact-item " id="az-contact-item" *ngFor="let order of orders; index as i" (click)="setId(order,i,this._uw.tamano)"> 
+                  <div class="az-img-user online"><img src="assets/assetsmobile/img/service.png" alt=""></div>
               <div class="az-contact-body">
                 <h6>{{order.quoteId  }}</h6>
                 <h6>{{order.serviceType  | slice:0:20 }}</h6>
                 <span>{{order.subService}}</span>
               </div>
-              <a href="#" class="az-contact-star"><i class="typcn typcn-star"></i></a>
+               <a href="#" class="az-contact-star active"><i class="typcn typcn-star"></i></a>
+
             </div>
-         <!--    <div class="az-contact-item">
-              <div class="az-avatar bg-gray-600 online">A</div>
-              <div class="az-contact-body">
-                <h6>Allan Rey Palban</h6>
-                <span>allanr@palban.com</span>
-              </div>
-              <a href="#" class="az-contact-star"><i class="typcn typcn-star"></i></a>
-            </div>
-            <div class="az-contact-item">
-              <div class="az-avatar bg-gray-700">A</div>
-              <div class="az-contact-body">
-                <h6>Aileen Mante</h6>
-                <span>+1-234-567-890</span>
-              </div>
-              <a href="#" class="az-contact-star"><i class="typcn typcn-star"></i></a>
-            </div> -->
-    
-    <!--         <div class="az-contact-label">Completed</div>
-            <div class="az-contact-item">
-              <div class="az-img-user"><img src="assets/assetsmobile/img/img5.jpg" alt=""></div>
-              <div class="az-contact-body">
-                <h6>Brandon Dilao</h6>
-                <span>+1-234-567-890</span>
-              </div>
-              <a href="#" class="az-contact-star"><i class="typcn typcn-star"></i></a>
-            </div>
-            <div class="az-contact-item">
-              <div class="az-img-user online"><img src="assets/assetsmobile/img/img21.jpg" alt=""></div>
-              <div class="az-contact-body">
-                <h6>Britney Labares</h6>
-                <span>+1-234-567-890</span>
-              </div>
-              <a href="#" class="az-contact-star"><i class="typcn typcn-star"></i></a>
-            </div>
-            <div class="az-contact-item">
-              <div class="az-avatar bg-gray-700">B</div>
-              <div class="az-contact-body">
-                <h6>Brateyley Cruz</h6>
-                <span>+1-234-567-890</span>
-              </div>
-              <a href="#" class="az-contact-star"><i class="typcn typcn-star"></i></a>
-            </div>
-            <div class="az-contact-label">Canceled</div>
-            <div class="az-contact-item">
-              <div class="az-img-user"><img src="assets/assetsmobile/img/img18.jpg" alt=""></div>
-              <div class="az-contact-body">
-                <h6>Camille Audrey</h6>
-                <span>+1-234-567-890</span>
-              </div>
-              <a href="#" class="az-contact-star"><i class="typcn typcn-star"></i></a>
-            </div>
-            <div class="az-contact-item">
-              <div class="az-img-user online"><img src="assets/assetsmobile/img/img16.jpg" alt=""></div>
-              <div class="az-contact-body">
-                <h6>Christian Lerio</h6>
-                <span>+1-234-567-890</span>
-              </div>
-              <a href="#" class="az-contact-star"><i class="typcn typcn-star"></i></a>
-            </div>
-            <div class="az-contact-item">
-              <div class="az-img-user online"><img src="assets/assetsmobile/img/img17.jpg" alt=""></div>
-              <div class="az-contact-body">
-                <h6>Christopher Segovia</h6>
-                <span>+1-234-567-890</span>
-              </div>
-              <a href="#" class="az-contact-star"><i class="typcn typcn-star"></i></a>
-            </div>
-     -->      
+        
           </div><!-- az-contacts-list -->
 
-        </div><!-- az-content-left -->
-        <div class="az-content-body az-content-body-contacts">
+        </div>
+        <div class="az-content-body az-content-body-contacts" [hidden]="itemSelected" >
+            <div style="padding: 30%;">
+          <p>
+              
+            {{message}}
+          </p>
+            </div>
+        </div>
+          <div class="az-content-body az-content-body-contacts" [hidden]="!itemSelected" >
           <div class="az-contact-info-header">
             <div class="media">
               <div class="az-img-user">
                 <img src="assets/assetsmobile/img/service.png" alt="">
-              <!--   <a href="#"><i class="typcn typcn-camera-outline"></i></a> -->
-              </div>
+               </div>
               <div class="media-body">
                 <h4>{{_uw.orderSelected.quoteId}}</h4>
-                <p>{{_uw.orderSelected.serviceType  | slice:0:20}}</p>
+                <p>{{_uw.orderSelected.serviceType  }} </p>
+                <p>{{_uw.orderSelected.subService  }}</p>
                 <nav class="nav">
                   <a class="nav-link"><i class="typcn typcn-user-outline"></i>Cleaners: 
                      <b>
-                      
+                                           <span style="font-size: 20px;">
+                       
                     {{_uw.orderSelected.ncleaners}}  
+                     </span> 
                     </b>
                   </a>
                   <a class="nav-link"><i class="typcn typcn-stopwatch"></i> Hours per day: 
                      <b>
-                      
+                     <span style="font-size: 20px;">
+                       
                     {{_uw.orderSelected.hoursPerDay}}  
+                     </span> 
                     </b>
                   </a>
                   <a class="nav-link"><i class="typcn typcn-calendar-outline"></i> Days per month: 
                     <b>
-                      
+                                           <span style="font-size: 20px;">
+                       
                     {{_uw.orderSelected.daysPerMonth}} 
+                     </span> 
                     </b>
                   </a>
-             <!--      <a href="#" class="nav-link"><i class="typcn typcn-cancel"></i> Block</a> -->
-                </nav>
-              </div><!-- media-body -->
-            </div><!-- media -->
+               </nav>
+              </div>
+            </div>
             <div class="az-contact-action">
-              <a href="#"><i class="typcn typcn-edit"></i> Edit Contact</a>
-              <a href="#"><i class="typcn typcn-trash"></i> Delete Contact</a>
-            </div><!-- az-contact-action -->
+              <a href="#"><i class="typcn typcn-flash-outline"></i> Status update</a>
+              <a href="#"><i class="typcn typcn-trash"></i> Delete </a>
+            </div>
 
-          </div><!-- az-contact-info-header -->
+          </div>
           <div class="az-contact-info-body">
             <div class="media-list">
+              <div class="media">
+                <div class="media-icon"><i class="fas fa-user"></i></div>
+                <div class="media-body">
+                  <div>
+                    <label>Client</label>
+                    <span class="tx-medium">{{_uw.orderSelected.name}}</span>
+                  </div>
+                  <div>
+                
+                  </div>
+                </div>
+              </div>
               <div class="media">
                 <div class="media-icon"><i class="fas fa-mobile-alt"></i></div>
                 <div class="media-body">
@@ -154,11 +112,10 @@
                     <span class="tx-medium">{{_uw.orderSelected.phone}}</span>
                   </div>
                   <div>
-                  <!--   <label>Personal</label>
-                    <span class="tx-medium">+1 (498) 021 0090</span> -->
+                
                   </div>
-                </div><!-- media-body -->
-              </div><!-- media -->
+                </div>
+              </div>
               <div class="media">
                 <div class="media-icon align-self-start"><i class="far fa-envelope"></i></div>
                 <div class="media-body">
@@ -167,11 +124,10 @@
                     <span class="tx-medium">{{_uw.orderSelected.email}}</span>
                   </div>
                   <div>
-                  <!--   <label>Other Account</label>
-                    <span class="tx-medium">me@bootstrapdash.me</span> -->
+                
                   </div>
-                </div><!-- media-body -->
-              </div><!-- media -->
+                </div>
+              </div>
               <div class="media">
                 <div class="media-icon"><i class="far fa-map"></i></div>
                 <div class="media-body">
@@ -179,25 +135,25 @@
                     <label>Address</label>
                     <span class="tx-medium">{{_uw.orderSelected.address}}</span>
                   </div>
-                </div><!-- media-body -->
-              </div><!-- media -->
+                </div>
+              </div>
               <div class="media">
-                <div class="media-icon"><i class="far fa-clock"></i></div>
+                <div class="media-icon"><i class="far fa-money-bill"></i></div>
                 <div class="media-body">
                   <div>
-                    <label>Call History</label>
-                    <a href="#" class="tx-13">Duration of last call: 2m 32sec</a>
+                    <label>Amount</label>
+                    <a href="#" class="tx-13">CAD: {{_uw.orderSelected.amount  |  number:'1.0-2' }}</a>
                   </div>
-                </div><!-- media-body -->
-              </div><!-- media -->
-            </div><!-- media-list -->
-          </div><!-- az-contact-info-body -->
-        </div><!-- az-content-body -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div><!-- az-content -->
+    </div>
 
     <div class="az-footer ht-40">
       <div class="container ht-100p pd-t-0-f">
-        <span>&copy; 2019 Azia Responsive Bootstrap 4 Dashboard Template</span>
+        <span>&copy; 2020 Buckapi.com</span>
       </div><!-- container -->
     </div><!-- az-footer -->
