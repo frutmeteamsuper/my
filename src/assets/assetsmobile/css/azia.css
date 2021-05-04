@@ -2967,7 +2967,7 @@ input[type="button"].btn-block {
   .nav-link.disabled {
     color: #7987a1;
     pointer-events: none;
-    cursor: default; }
+    cursor: pointer; }
 
 .nav-tabs {
   border-bottom: 1px solid #cdd4e0; }
@@ -10694,7 +10694,7 @@ body {
   font-weight: 700;
   font-size: 28px;
   font-family: 'Poppins', sans-serif;
-  text-transform: lowercase;
+  /*text-transform: lowercase;*/
   color: #5b47fb;
   letter-spacing: -1px;
   display: flex;

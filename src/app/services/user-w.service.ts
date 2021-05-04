@@ -37,8 +37,10 @@ export class UserWService {
 	foredit:any={};
 	globalCategory:boolean=true;
 	idCard:string;
+	idSelected:string;
 	imagePreviewProduct:string;
 	images:any[]=[];
+	indice:number=0;
 	info:any={};
 	isLogged:boolean=false;
 	loaded:boolean=false;
@@ -48,6 +50,7 @@ export class UserWService {
 	numProd:number=0;
 	order:any={};
 	orderPro:any={};
+	orderSelected:any={};
 	pagoImage:any[]=[];
 	pedido:any={};
 	partner:boolean;
@@ -57,6 +60,7 @@ export class UserWService {
 	selectorB:boolean;
 	showAll:boolean=false;
 	subTotal:number=0;
+	tamano:number=0;
 	tixs:any[]=[];
 	tixPreview:any={};
 	tixsOrigin:any[]=[];

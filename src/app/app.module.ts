@@ -46,6 +46,8 @@ import { TestappComponent } from './components/testapp/testapp.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { Component, Inject} from '@angular/core';
 import { FooterComponent } from './components/footer/footer.component';
+import { OrdersComponent } from './components/orders/orders.component';
+
 
 
 @NgModule({
@@ -54,6 +56,7 @@ import { FooterComponent } from './components/footer/footer.component';
     TestappComponent,
     TopbarComponent,
     FooterComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,

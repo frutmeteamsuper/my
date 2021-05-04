@@ -12,24 +12,25 @@
 
           <nav class="nav az-nav-line az-nav-line-chat">
             <a href="#" data-toggle="tab" class="nav-link active">Appointments</a>
-            <a href="#" data-toggle="tab" class="nav-link">Quotes</a>
+            <a   (click)="quotes()"   data-toggle="tab" class="nav-link" >Quotes</a>
           </nav>
 
           <div id="azContactList" class="az-contacts-list">
             <div class="az-contact-label">News</div>
-            <div class="az-contact-item selected">
+         <!--    <div class="az-contact-item selected">
               <div class="az-img-user online"><img src="assets/assetsmobile/img/img20.jpg" alt=""></div>
               <div class="az-contact-body">
                 <h6>Abigail Johnson</h6>
                 <span class="phone">+1-234-567-890</span>
               </div>
               <a href="#" class="az-contact-star active"><i class="typcn typcn-star"></i></a>
-            </div>
-            <div class="az-contact-item">
-              <div class="az-img-user"><img src="assets/assetsmobile/img/img9.jpg" alt=""></div>
+            </div> -->
+            <div class="az-contact-item" *ngFor="let order of orders; index as i" (click)="setId(order,i,this._uw.tamano)"> 
+           <!--    <div class="az-img-user"><img src="assets/assetsmobile/img/img9.jpg" alt=""></div> -->
               <div class="az-contact-body">
-                <h6>Archie Cantones</h6>
-                <span>archie@cantones.com</span>
+                <h6>{{order.quoteId  }}</h6>
+                <h6>{{order.serviceType  | slice:0:20 }}</h6>
+                <span>{{order.subService}}</span>
               </div>
               <a href="#" class="az-contact-star"><i class="typcn typcn-star"></i></a>
             </div>
@@ -108,17 +109,32 @@
           <div class="az-contact-info-header">
             <div class="media">
               <div class="az-img-user">
-                <img src="assets/assetsmobile/img/img20.jpg" alt="">
-                <a href="#"><i class="typcn typcn-camera-outline"></i></a>
+                <img src="assets/assetsmobile/img/service.png" alt="">
+              <!--   <a href="#"><i class="typcn typcn-camera-outline"></i></a> -->
               </div>
               <div class="media-body">
-                <h4>Abigail Johnson</h4>
-                <p>Product Designer</p>
+                <h4>{{_uw.orderSelected.quoteId}}</h4>
+                <p>{{_uw.orderSelected.serviceType  | slice:0:20}}</p>
                 <nav class="nav">
-                  <a href="#" class="nav-link"><i class="typcn typcn-device-phone"></i> Call</a>
-                  <a href="#" class="nav-link"><i class="typcn typcn-messages"></i> Message</a>
-                  <a href="#" class="nav-link"><i class="typcn typcn-user-add-outline"></i> Add to Group</a>
-                  <a href="#" class="nav-link"><i class="typcn typcn-cancel"></i> Block</a>
+                  <a class="nav-link"><i class="typcn typcn-user-outline"></i>Cleaners: 
+                     <b>
+                      
+                    {{_uw.orderSelected.ncleaners}}  
+                    </b>
+                  </a>
+                  <a class="nav-link"><i class="typcn typcn-stopwatch"></i> Hours per day: 
+                     <b>
+                      
+                    {{_uw.orderSelected.hoursPerDay}}  
+                    </b>
+                  </a>
+                  <a class="nav-link"><i class="typcn typcn-calendar-outline"></i> Days per month: 
+                    <b>
+                      
+                    {{_uw.orderSelected.daysPerMonth}} 
+                    </b>
+                  </a>
+             <!--      <a href="#" class="nav-link"><i class="typcn typcn-cancel"></i> Block</a> -->
                 </nav>
               </div><!-- media-body -->
             </div><!-- media -->
@@ -134,12 +150,12 @@
                 <div class="media-icon"><i class="fas fa-mobile-alt"></i></div>
                 <div class="media-body">
                   <div>
-                    <label>Work</label>
-                    <span class="tx-medium">+1 (234) 567 8901</span>
+                    <label>Phone</label>
+                    <span class="tx-medium">{{_uw.orderSelected.phone}}</span>
                   </div>
                   <div>
-                    <label>Personal</label>
-                    <span class="tx-medium">+1 (498) 021 0090</span>
+                  <!--   <label>Personal</label>
+                    <span class="tx-medium">+1 (498) 021 0090</span> -->
                   </div>
                 </div><!-- media-body -->
               </div><!-- media -->
@@ -147,12 +163,12 @@
                 <div class="media-icon align-self-start"><i class="far fa-envelope"></i></div>
                 <div class="media-body">
                   <div>
-                    <label>Gmail Account</label>
-                    <span class="tx-medium">abigail.johnson@gmail.com</span>
+                    <label>Email</label>
+                    <span class="tx-medium">{{_uw.orderSelected.email}}</span>
                   </div>
                   <div>
-                    <label>Other Account</label>
-                    <span class="tx-medium">me@bootstrapdash.me</span>
+                  <!--   <label>Other Account</label>
+                    <span class="tx-medium">me@bootstrapdash.me</span> -->
                   </div>
                 </div><!-- media-body -->
               </div><!-- media -->
@@ -160,8 +176,8 @@
                 <div class="media-icon"><i class="far fa-map"></i></div>
                 <div class="media-body">
                   <div>
-                    <label>Current Address</label>
-                    <span class="tx-medium">012 Dashboard Apartments, San Francisco, California 13245</span>
+                    <label>Address</label>
+                    <span class="tx-medium">{{_uw.orderSelected.address}}</span>
                   </div>
                 </div><!-- media-body -->
               </div><!-- media -->
