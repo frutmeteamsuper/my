@@ -4,17 +4,16 @@ import { OrderInterface } from '../../models/order-interface';
 import { DataApiService } from '../../services/data-api.service';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-// import * as $ from 'jquery';
-// declare var $: any; 
-@Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css']
-})
-export class OrdersComponent implements OnInit {
 
-  constructor(
-    private dataApi: DataApiService,
+@Component({
+  selector: 'app-quotes',
+  templateUrl: './quotes.component.html',
+  styleUrls: ['./quotes.component.css']
+})
+export class QuotesComponent implements OnInit {
+
+  constructor(   
+  	private dataApi: DataApiService,
     public _uw:UserWService,
     private location: Location,
     private router: Router
@@ -109,6 +108,7 @@ quotes()
         });
       }
     this._uw.loaded=true;
+    this._uw.account=false;
    this.getOrders();
   }
   back(){

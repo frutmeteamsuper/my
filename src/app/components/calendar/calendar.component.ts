@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserWService } from "../../services/user-w.service";
 
-  declare var $: any; 
+  // declare var $: any; 
 
 @Component({
   selector: 'app-calendar',
@@ -18,8 +18,10 @@ export class CalendarComponent implements OnInit {
   url2 = "assets/assetsmobile/lib/perfect-scrollbar/perfect-scrollbar.min.js";
   url3 = "assets/assetsmobile/lib/fullcalendar/fullcalendar.min.js";
   url4 = "assets/assetsmobile/lib/jquery-ui/ui/widgets/datepicker.js";
-  url5 = "assets/assetsmobile/js/azia.js";
-  url6 = "assets/assetsmobile/js/app-calendar.js";
+  url5 = "assets/assetsmobile/lib/select2/js/select2.full.min.js";
+
+  url6 = "assets/assetsmobile/js/azia.js";
+  url7 = "assets/assetsmobile/js/app-calendar.js";
 
   public loadScript() {
     let node = document.createElement("script");
@@ -68,6 +70,14 @@ export class CalendarComponent implements OnInit {
     node.async = true;
     node.charset = "utf-8";
     document.getElementsByTagName("head")[0].appendChild(node);
+  }
+  public loadScript7() {
+    let node = document.createElement("script");
+    node.src = this.url7;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
   } 
   ngOnInit() {
   	  if (this._uw.loaded==true){
@@ -78,6 +88,7 @@ export class CalendarComponent implements OnInit {
         this.loadScript4();
         this.loadScript5();
         this.loadScript6();
+        this.loadScript7();
         });
       }
     this._uw.loaded=true;

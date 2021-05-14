@@ -1,0 +1,134 @@
+
+    <div class="az-content az-content-app az-content-contacts pd-b-0">
+      <div class="container">
+        <div class="az-content-left az-content-left-contacts">
+          <div class="az-content-breadcrumb lh-1 mg-b-10">
+          </div>
+          <h2 class="az-content-title tx-24 mg-b-30">My Appointments</h2>
+       
+
+      
+
+           <div id="azContactList" class="az-contacts-list"  >
+            <div class="az-contact-label">{{first}}</div>
+            <div class="az-contact-item " id="az-contact-item" *ngFor="let order of orders; index as i" (click)="setId(order,i,this._uw.tamano)" [hidden]="order.orderType!='appointment'"> 
+                  <div class="az-img-user online"><img src="assets/assetsmobile/img/service.png" alt=""></div>
+              <div class="az-contact-body">
+                <h6># {{order.quoteId  }}</h6>
+                <h6>{{order.serviceType  | slice:0:20 }} cleaning</h6>
+                <span>Size: {{order.houseSize}}</span>
+              </div>
+               <a href="#" class="az-contact-star active"><i class="typcn typcn-star"></i></a>
+            </div>
+          </div>
+        </div>
+
+       
+
+         <div class="az-content-body az-content-body-contacts" [hidden]="!itemSelected " >
+          <div class="az-contact-info-header">
+            <div class="media">
+              <div class="az-img-user">
+                <img src="assets/assetsmobile/img/service.png" alt="">
+               </div>
+              <div class="media-body">
+                <h4># {{_uw.orderSelected.quoteId}}</h4>
+                <p>{{_uw.orderSelected.serviceType  }} cleaning </p>
+                <p>Size: {{_uw.orderSelected.houseSize  }}</p>
+                <nav class="nav">
+                 
+                
+               
+               </nav>
+              </div>
+            </div>
+          </div>
+          <div class="az-contact-info-body">
+            <div class="media-list">
+              <div class="media">
+                <div class="media-icon"><i class="fas fa-user"></i></div>
+                <div class="media-body">
+                  <div>
+                    <label>Client</label>
+                    <span class="tx-medium">{{_uw.orderSelected.name}}</span>
+                  </div>
+                  <div>
+                
+                  </div>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="media-body">
+                  <div>
+                    <label>Phone</label>
+                    <span class="tx-medium">{{_uw.orderSelected.phone}}</span>
+                  </div>
+                  <div>
+                
+                  </div>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-icon align-self-start"><i class="far fa-envelope"></i></div>
+                <div class="media-body">
+                  <div>
+                    <label>Email</label>
+                    <span class="tx-medium">{{_uw.orderSelected.email}}</span>
+                  </div>
+                  <div>
+                
+                  </div>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-icon"><i class="far fa-map"></i></div>
+                <div class="media-body">
+                  <div>
+                    <label>Address</label>
+                    <span class="tx-medium">{{_uw.orderSelected.address}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-icon"><i class="far fa-money-bill"></i></div>
+                <div class="media-body">
+                  <div>
+                    <label>Amount</label>
+                    <a href="#" class="tx-13">CAD: {{_uw.orderSelected.amount  |  number:'1.0-2' }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="az-footer ht-40">
+      <div class="container ht-100p pd-t-0-f">
+        <span>&copy; 2020 Buckapi.com</span>
+      </div><!-- container -->
+    </div><!-- az-footer -->
+    <script>
+      $(function(){
+        'use strict'
+
+        new PerfectScrollbar('#azContactList', {
+          suppressScrollX: true
+        });
+
+        new PerfectScrollbar('.az-contact-info-body', {
+          suppressScrollX: true
+        });
+
+        $('.az-contact-item').on('click touch', function() {
+          $(this).addClass('selected');
+          $(this).siblings().removeClass('selected');
+
+          $('body').addClass('az-content-body-show');
+        })
+
+      });
+    </script>

@@ -7,7 +7,7 @@ import { UserWService } from "./services/user-w.service";
 import { SwUpdate } from '@angular/service-worker';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-
+  // declare var $: any;
 // declare var $: any;
 @Component({
   selector: 'app-root',

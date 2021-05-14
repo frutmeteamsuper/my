@@ -48,6 +48,9 @@ import { Component, Inject} from '@angular/core';
 import { FooterComponent } from './components/footer/footer.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { AccountComponent } from './components/account/account.component';
+import { QuotesComponent } from './components/quotes/quotes.component';
+import { AppointmentsComponent } from './components/appointments/appointments.component';
 
 
 
@@ -59,6 +62,9 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     FooterComponent,
     OrdersComponent,
     CalendarComponent,
+    AccountComponent,
+    QuotesComponent,
+    AppointmentsComponent,
   ],
   imports: [
     BrowserModule,

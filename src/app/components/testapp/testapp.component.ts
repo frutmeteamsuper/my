@@ -143,6 +143,7 @@ cartCalculate(){
         // this.loadScript3();
         });
       }
+      this._uw.account=false;
     this._uw.loaded=true;
    
      // this.getAllTixsInitload();

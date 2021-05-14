@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserWService {
+	account:boolean=false;
 	admin:boolean;
 	adminName:string;
 	affiliate:boolean;
@@ -45,7 +46,6 @@ export class UserWService {
 	isLogged:boolean=false;
 	loaded:boolean=false;
 	method:string;
-	moccs:boolean=false;
 	name:string;
 	numProd:number=0;
 	order:any={};
